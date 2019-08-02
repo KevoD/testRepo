@@ -15,11 +15,13 @@ import java.util.Scanner;
 public class Juego {
     
     public static void main(String[] args) {
-        System.out.println("Dame un numero entre 1 y 20");
-        Scanner teclado = new Scanner(System.in);
-        int numero = Integer.parseInt(teclado.nextLine());
+        int numero, numeroaleatorio,contador=0;
         Random r = new Random ();
-        int numeroaleatorio;
+        Scanner teclado = new Scanner(System.in);
+        do{
+           System.out.println("Dame un numero entre 1 y 20");
+        
+        numero = Integer.parseInt(teclado.nextLine());
         numeroaleatorio=r.nextInt(20)+1;
         if (numero == numeroaleatorio){
             System.out.println("Ganaste crack, el numero de la vistoria fue "+numero);
@@ -27,5 +29,13 @@ public class Juego {
         else{
             System.out.println("Paila perdiste mi ñero, ese numero "+numero+" es malo");
         }
-    }
+        contador=(contador+1);
+        }
+        
+        while(numeroaleatorio!=numero);
+        System.out.println("ganaste al los "+contador+" intentos");
+   
+        
+        
+   }
 }
